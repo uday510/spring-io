@@ -1,24 +1,33 @@
 package com.app;
 
-import java.beans.ConstructorProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Alien {
-    private int age = 0;
+
+    @Value("25")
+    private int age;
+
+    @Autowired
+//    @Qualifier("desktop")
     private Computer computer;
 
     public Alien() {
-//        System.out.println("Alien object created" );
+//        System.out.println("Alien object created");
     }
 
-//    @ConstructorProperties({"age", "laptop"})
-//    public Alien(int age, Laptop laptop) {
+//    public Alien(int age) {
+//        System.out.println("Alien object created with age");
 //        this.age = age;
-//        this.laptop = laptop;
 //    }
 
-    public Alien(int age) {
+    public Alien(int age, Computer computer) {
+//        System.out.println("Alien object created with age and computer");
         this.age = age;
-        System.out.println("Alien object created with age: " + age);
+        this.computer = computer;
     }
 
     public int getAge() {

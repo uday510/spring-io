@@ -4,25 +4,27 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <bean id="alien" class="com.app.Alien" scope="prototype">-->
+    <!--   <bean id="alien" class="com.app.Alien" scope="prototype"/>  -->
     <bean id="alien" class="com.app.Alien" autowire="byName">
+
         <property name="age" value="21"/>
 <!--        <property name="computer" ref="computer"/>-->
 
+<!--        <constructor-arg type="int" value="21"/>-->
+<!--        <constructor-arg type="com.app.Laptop" ref="lap1"/>-->
 
-<!--        <property name="age" value="21"/>-->
-
-        <!-- Setter Injection -->
-<!--        <property name="laptop" ref="laptop1"/>-->
-
-        <!-- Constructor Injection -->
+<!--        <constructor-arg index="1" ref="lap1"/>-->
 <!--        <constructor-arg index="0" value="21"/>-->
-<!--        <constructor-arg index="1" ref="laptop1"/>-->
 
-     </bean>
-<!--    <bean id="alien2" class="com.app.Alien">-->
-<!--    </bean>-->
-    <bean id="computer" class="com.app.Laptop">
+<!--        <constructor-arg name="laptop" value="lap2"/>-->
+<!--        <constructor-arg name="age" value="21"/>-->
+
+<!--        <property name="computer" ref="lap1"/>-->
     </bean>
 
+    <bean id="lap1" class="com.app.Laptop"/>
+
+    <bean id="computer1" class="com.app.Laptop"/>
+
+    <bean id="computer" class="com.app.Desktop" primary="true"/>
 </beans>
