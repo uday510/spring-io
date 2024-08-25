@@ -1,27 +1,24 @@
 package com.app;
 
+import java.beans.ConstructorProperties;
+
 public class Alien {
     private int age = 0;
-    private Laptop laptop;
+    private Computer computer;
 
     public Alien() {
-        System.out.println("Alien object created" );
+//        System.out.println("Alien object created" );
     }
+
+//    @ConstructorProperties({"age", "laptop"})
+//    public Alien(int age, Laptop laptop) {
+//        this.age = age;
+//        this.laptop = laptop;
+//    }
 
     public Alien(int age) {
         this.age = age;
         System.out.println("Alien object created with age: " + age);
-    }
-
-    public Alien(int age, Laptop laptop) {
-        this.age = age;
-        this.laptop = laptop;
-        System.out.println("Alien object created with age: " + age + " and laptop: " + laptop);
-    }
-
-    public void code() {
-        System.out.println("Alien is coding");
-        laptop.compile();
     }
 
     public int getAge() {
@@ -32,11 +29,16 @@ public class Alien {
         this.age = age;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public Computer getComputer() {
+        return computer;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setComputer(Computer computer) {
+        this.computer = computer;
+    }
+
+    public void code() {
+        System.out.println("Alien is coding");
+        computer.compile();
     }
 }
